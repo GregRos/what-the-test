@@ -16,15 +16,15 @@
   "author": "GregRos",
   "exports": {
     ".": {
-      "require": "./dist/lib/index.js",
-      "import": "./dist/lib/index.js",
-      "default": "./dist/lib/index.js",
-      "types": "./dist/lib/index.d.ts"
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/lib/cjs/index.js",
+      "types": "./dist/lib/esm/index.d.ts"
     }
   },
   "main": "dist/cjs/lib/index.js",
   "module": "dist/esm/lib/index.js",
-  "typings": "dist/lib/index",
+  "typings": "dist/esm/index",
   "scripts": {
     "build": "tsc -b .",
     "clean": "shx rm -rf dist",
