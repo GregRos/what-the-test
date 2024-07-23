@@ -1,13 +1,25 @@
 {
-  "references": [{
-    "path": "src/lib/tsconfig.json"
-  }
-  ,{
-    "path": "src/test/tsconfig.json"
-  } ],
+  "references": [
+    {
+      "path": "src/loader/tsconfig.cjs.json"
+    },
+    {
+      "path": "src/loader/tsconfig.esm.json"
+    },
+    {
+      "path": "src/lib/tsconfig.esm.json"
+    },
+    {
+      "path": "src/lib/tsconfig.cjs.json"
+    },
+    {
+      "path": "src/test/tsconfig.json"
+    }
+  ],
   "compilerOptions": {
     "module": "commonjs",
-    "sourceMap": true
+    "sourceMap": true,
+    "types": []
   },
   "files": []
 }

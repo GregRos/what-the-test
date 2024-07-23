@@ -14,8 +14,8 @@ const config = {
     collectCoverageFrom: ["<rootDir>/src/lib/**/*.ts"],
     coverageDirectory: "<rootDir>/coverage",
     moduleNameMapper: {
-        "^@lib/(.*)$": "<rootDir>/src/lib/$1",
-        "^@lib$": "<rootDir>/src/lib"
+        "^@lib/(.*)$": "<rootDir>/dist/cjs/$1",
+        "^@lib$": "<rootDir>/dist/cjs"
     },
 
     globals: {

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.esm.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "../../dist/esm/loader",
+    "tsBuildInfoFile": "../../dist/esm/loader/tsconfig.tsbuildinfo",
+    "rootDir": "esm",
+    "noEmit": false,
+    "types": ["node"]
+  },
+  "include": ["./esm/*.ts"],
+  "exclude": ["**/node_modules"]
+}
