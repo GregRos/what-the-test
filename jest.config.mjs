@@ -21,10 +21,6 @@ const config = {
     coverageDirectory: "<rootDir>/coverage",
     moduleNameMapper: {
         "^@lib/(.*)$": "<rootDir>/dist/esm/$1"
-    },
-
-    globals: {
-        defaults: {}
     }
 };
 

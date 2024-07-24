@@ -1,6 +1,6 @@
 {
   "name": "what-the-test",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Detect the user's test framework and use it to register tests. Works with both ESM and CJS.",
   "keywords": [
     "unit",
@@ -45,7 +45,7 @@
     "lint:fix": "prettier --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint --fix src/**/*.{ts,mts,cts,js,mjs,cjs} ",
     "lint:check": "prettier --check src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint src/**/*.{ts,mts,cts,js,mjs,cjs}",
     "test": " node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "cleanup": "run-s build:clean lint:fix test"
+    "tidyup": "run-s build:clean lint:fix test"
   },
   "lint-staged": {
     "*.{ts,mts,cts,js,mjs,cjs}": "node_modules/.bin/eslint --cache --fix",
