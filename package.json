@@ -25,6 +25,12 @@
   "main": "dist/cjs/lib/index.js",
   "module": "dist/esm/lib/index.js",
   "typings": "dist/esm/index",
+  "files": [
+    "README.md",
+    "dist",
+    "LICENSE.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc -b .",
     "clean": "shx rm -rf dist",
