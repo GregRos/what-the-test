@@ -14,9 +14,15 @@ export type {
     TestEnv,
     TestFnFn
 } from "./interfaces/define.js"
+export {
+    FixtureType,
+    RegisterMode,
+    TestElementType
+} from "./interfaces/type-strings.js"
 export type { TestFrameworkName }
 const fwNames = ["ava", "mocha", "jest", "jasmine"] as const
 export function findTestFramework(order?: TestFrameworkName[]): TestEnv | null {
+    null! as number satisfies string
     const byTop = getGlobalTestFramework()
     if (byTop != false) {
         return wrapModule(globalThis, byTop)
