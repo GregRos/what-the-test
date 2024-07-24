@@ -7,7 +7,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "declarationMap": true,
     "sourceMap": true,
     "noEmit": true,

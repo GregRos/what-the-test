@@ -8,8 +8,8 @@
   "compilerOptions": {
     "noEmit": true,
     "paths": {
-      "@lib/*": ["../../dist/cjs/*"],
-      "@lib": ["../../dist/cjs/index"]
+      "@lib/*": ["../../dist/esm/*"],
+      "@lib": ["../../dist/esm/index"]
     },
     "types": ["jest", "node"]
   },

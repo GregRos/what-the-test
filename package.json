@@ -1,6 +1,6 @@
 {
   "name": "what-the-test",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Detect the user's test framework and use it to register tests. Works with both ESM and CJS.",
   "keywords": [
     "unit",
@@ -14,6 +14,7 @@
   "repository": "github:gregros/what-the-test",
   "license": "MIT",
   "author": "GregRos",
+  "type": "module",
   "exports": {
     ".": {
       "require": {
@@ -43,7 +44,7 @@
     "watch": "tsc -b . --watch",
     "lint:fix": "prettier --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint --fix src/**/*.{ts,mts,cts,js,mjs,cjs} ",
     "lint:check": "prettier --check src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,ctsx,mtsx,html,htm,yaml,yml,json,scss,css} && eslint src/**/*.{ts,mts,cts,js,mjs,cjs}",
-    "test": "jest --coverage"
+    "test": " node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "lint-staged": {
     "*.{ts,mts,cts,js,mjs,cjs}": "node_modules/.bin/eslint --cache --fix",
