@@ -1,8 +1,8 @@
 import type { TestEnv } from "./interfaces/define.js"
 import { frameworks } from "./loader/index.js"
-import type { TestFrameworkName } from "./loader/types"
+import type { TestFrameworkName } from "./loader/types.js"
 import { getGlobalTestFramework } from "./utils/get-global-framework.js"
-import { wrapModule } from "./wrappers/wrap-module"
+import { wrapModule } from "./wrappers/wrap-module.js"
 export type {
     EnvFn,
     EnvFnFn,

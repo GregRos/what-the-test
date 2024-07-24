@@ -1,6 +1,6 @@
 import type * as Jest from "@jest/globals"
-import { TestFramework, type Suite, type Test } from "../interfaces/inspect"
-import { formatTodoTitleAsSkip } from "../utils/format-todo-title"
+import { TestFramework, type Suite, type Test } from "../interfaces/inspect.js"
+import { formatTodoTitleAsSkip } from "../utils/format-todo-title.js"
 export class JestGlobal extends TestFramework {
     readonly which = "jest"
     constructor(readonly _module: typeof Jest) {

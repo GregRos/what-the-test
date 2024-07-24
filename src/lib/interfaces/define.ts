@@ -1,5 +1,5 @@
-import type { TestFrameworkName } from "../loader/types"
-import type { SuiteFn, TestFn } from "./inspect"
+import type { TestFrameworkName } from "../loader/types.js"
+import type { SuiteFn, TestFn } from "./inspect.js"
 
 export interface TestFnFn {
     (name: string, fn: TestFn): void

@@ -1,4 +1,4 @@
-import { findTestFramework } from "@lib"
+import { findTestFramework } from "@lib/index.js"
 
 it("running from jest", () => {
     const tfw = findTestFramework()

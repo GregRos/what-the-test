@@ -1,4 +1,4 @@
-import type { TestFrameworkName } from "../loader/types"
+import type { TestFrameworkName } from "../loader/types.js"
 
 declare const expect: any
 declare const jasmine: any

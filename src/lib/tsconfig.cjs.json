@@ -3,7 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "outDir": "../../dist/cjs",
-    "tsBuildInfoFile": "../../dist/tsconfig.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/cjs/tsconfig.tsbuildinfo",
     "rootDir": ".",
     "noEmit": false,
     "types": ["node"]

@@ -2,8 +2,8 @@ import {
     Fixture as FixtureInterface,
     Suite as SuiteInterface,
     Test as TestInterface
-} from "./define"
-import type { RegisterMode } from "./type-strings"
+} from "./define.js"
+import type { RegisterMode } from "./type-strings.js"
 export type TestFn = (expect: any) => void | Promise<void>
 export class Test implements TestInterface {
     readonly type = "test" as const;

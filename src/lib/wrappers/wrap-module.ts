@@ -1,8 +1,8 @@
-import type { TestFrameworkName } from "../loader/types"
-import { AvaGlobal } from "./ava"
-import { JasmineGlobal } from "./jasmine"
-import { JestGlobal } from "./jest"
-import { MochaGlobal } from "./mocha"
+import type { TestFrameworkName } from "../loader/types.js"
+import { AvaGlobal } from "./ava.js"
+import { JasmineGlobal } from "./jasmine.js"
+import { JestGlobal } from "./jest.js"
+import { MochaGlobal } from "./mocha.js"
 export function wrapModule(module: any, wrapper: TestFrameworkName) {
     switch (wrapper) {
         case "ava":

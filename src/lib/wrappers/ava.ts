@@ -1,4 +1,4 @@
-import { Suite, TestFramework, type Test } from "../interfaces/inspect"
+import { Suite, TestFramework, type Test } from "../interfaces/inspect.js"
 export class AvaGlobal extends TestFramework {
     readonly which = "jest"
     constructor(
