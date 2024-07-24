@@ -8,7 +8,8 @@ const config = {
         "^.+\\.tsx?$": ["ts-jest",
             {
                 tsconfig: "<rootDir>/src/test/tsconfig.json",
-                transpileOnly: true
+                transpileOnly: true,
+                useESM: true
             }]
     },
     extensionsToTreatAsEsm: [".ts"],
