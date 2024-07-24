@@ -10,12 +10,12 @@ export class JestGlobal extends TestFramework {
     _defineTest = {
         pass: (test: Test) => {
             this._module.test(test.name, async () => {
-                return test.fn?.({} as any)
+                return test.fn?.(this._module.expect)
             })
         },
         skip: (test: Test) => {
             this._module.test.skip(test.name, async () => {
-                return test.fn?.({} as any)
+                return test.fn?.(this._module.expect)
             })
         },
         todo: (test: Test) => {
