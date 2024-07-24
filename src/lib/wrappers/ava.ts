@@ -1,7 +1,6 @@
 import type * as Ava from "ava"
 
 import { Suite, TestFramework, type Test } from "../interfaces/inspect"
-import type { RegisterMode } from "../interfaces/type-strings"
 export class AvaGlobal extends TestFramework {
     readonly which = "jest"
     constructor(readonly _module: typeof Ava) {
@@ -31,7 +30,7 @@ export class AvaGlobal extends TestFramework {
         }
     }
 
-    _defineSuite(suite: Suite, overrideMode?: RegisterMode) {
+    _defineSuite(suite: Suite) {
         suite.fn?.(suite)
     }
 }
