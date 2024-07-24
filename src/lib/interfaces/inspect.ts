@@ -40,18 +40,18 @@ abstract class FixtureBase implements FixtureInterface {
     }
     test = Object.assign(
         (name: string, fn: TestFn) => {
-            return this.root._defineTest(
+            return this.root._defineTest.pass(
                 new Test(this as any, name, "pass", fn)
             )
         },
         {
             skip: (name: string, fn: TestFn) => {
-                return this.root._defineTest(
+                return this.root._defineTest.skip(
                     new Test(this as any, name, "skip", fn)
                 )
             },
             todo: (name: string, fn: TestFn) => {
-                return this.root._defineTest(
+                return this.root._defineTest.todo(
                     new Test(this as any, name, "todo", fn)
                 )
             }
@@ -60,18 +60,18 @@ abstract class FixtureBase implements FixtureInterface {
 
     describe = Object.assign(
         (name: string, fn: SuiteFn) => {
-            return this.root._defineSuite(
+            return this.root._defineSuite.pass(
                 new Suite(this as any, name, "pass", fn)
             )
         },
         {
             skip: (name: string, fn: SuiteFn) => {
-                return this.root._defineSuite(
+                return this.root._defineSuite.skip(
                     new Suite(this as any, name, "skip", fn)
                 )
             },
             todo: (name: string, fn: SuiteFn) => {
-                return this.root._defineSuite(
+                return this.root._defineSuite.skip(
                     new Suite(this as any, name, "todo", fn)
                 )
             }
@@ -95,8 +95,17 @@ export class Suite extends FixtureBase implements SuiteInterface {
 export abstract class TestFramework extends FixtureBase {
     readonly type = "global" as const
 
-    abstract _defineSuite(suite: Suite): void
-    abstract _defineTest(test: Test): void
+    abstract _defineTest: {
+        pass(test: Test): void
+        skip(test: Test): void
+        todo(test: Test): void
+    }
+
+    abstract _defineSuite: {
+        pass(suite: Suite): void
+        skip(suite: Suite): void
+        todo(suite: Suite): void
+    }
 }
 
 export type Fixture = Suite | TestFramework

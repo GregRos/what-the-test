@@ -23,7 +23,7 @@ export type { TestFrameworkName }
 const fwNames = ["ava", "mocha", "jest", "jasmine"] as const
 export function findTestFramework(order?: TestFrameworkName[]): TestEnv | null {
     const byTop = getGlobalTestFramework()
-    if (byTop != false) {
+    if (byTop !== false) {
         return wrapModule(globalThis, byTop)
     }
     order ??= []

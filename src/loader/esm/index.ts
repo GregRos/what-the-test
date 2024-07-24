@@ -1,4 +1,4 @@
-// @ts-ignore - package has bad type definitions
+// @ts-expect-error - package has bad type definitions
 import tryImport from "semver-try-require"
 
 async function getFrameworkModules<const Names extends string[]>(

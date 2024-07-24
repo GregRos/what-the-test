@@ -1,5 +1,4 @@
 import { TestFramework, type Suite, type Test } from "../interfaces/inspect"
-import type { RegisterMode } from "../interfaces/type-strings"
 import { formatTodoTitleAsSkip } from "../utils/format-todo-title"
 export class JasmineGlobal extends TestFramework {
     readonly which = "jest"
@@ -9,30 +8,50 @@ export class JasmineGlobal extends TestFramework {
             xit: any
             describe: any
             expect: any
+            xdescribe: any
         }
     ) {
         super(null)
     }
-    _defineTest(test: Test) {
-        const fixedFn = () => {
-            test.fn?.(this._module.expect)
-        }
-        switch (test.mode) {
-            case "pass":
-                this._module.it(test.name, fixedFn)
-            case "todo":
-                this._module.xit(formatTodoTitleAsSkip(test.name), fixedFn)
-            case "skip":
-                this._module.xit(test.name, fixedFn)
 
-            default:
-                throw new Error(`Unknown test mode: ${test}`)
+    _defineTest = {
+        pass: (test: Test) => {
+            return this._module.it(test.name, async () => {
+                return test.fn?.(this._module.expect)
+            })
+        },
+        skip: (test: Test) => {
+            return this._module.xit(test.name, async () => {
+                return test.fn?.(this._module.expect)
+            })
+        },
+        todo: (test: Test) => {
+            return this._module.xit(
+                formatTodoTitleAsSkip(test.name),
+                async () => {
+                    return test.fn?.(this._module.expect)
+                }
+            )
         }
     }
-
-    _defineSuite(suite: Suite, overrideMode?: RegisterMode) {
-        this._module.describe(suite.name, () => {
-            suite.fn?.(suite)
-        })
+    _defineSuite = {
+        pass: (suite: Suite) => {
+            return this._module.describe(suite.name, () => {
+                return suite.fn?.(suite)
+            })
+        },
+        skip: (suite: Suite) => {
+            return this._module.xdescribe(suite.name, () => {
+                return suite.fn?.(suite)
+            })
+        },
+        todo: (suite: Suite) => {
+            return this._module.xdescribe(
+                formatTodoTitleAsSkip(suite.name),
+                () => {
+                    return suite.fn?.(suite)
+                }
+            )
+        }
     }
 }

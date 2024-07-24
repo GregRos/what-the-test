@@ -7,7 +7,7 @@ function getFrameworkModules<const Names extends string[]>(
 } {
     const entries = []
     for (const name of names) {
-        // @ts-ignore package has broken types
+        // @ts-expect-error package has broken types
         const fw = tryRequire(name)
         entries.push([name, fw])
     }
