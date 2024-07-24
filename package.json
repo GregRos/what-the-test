@@ -1,6 +1,6 @@
 {
   "name": "what-the-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detect the user's test framework and use it to register tests. Works with both ESM and CJS.",
   "keywords": [
     "unit",
