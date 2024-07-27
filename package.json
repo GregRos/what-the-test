@@ -1,6 +1,6 @@
 {
   "name": "what-the-test",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Detect the user's test framework and use it to register tests. Works with both ESM and CJS.",
   "keywords": [
     "unit",
@@ -11,7 +11,8 @@
     "esm",
     "cjs"
   ],
-  "repository": "github:gregros/what-the-test",
+  "homepage": "https://github.com/GregRos/what-the-test#readme",
+  "repository": "github:GregRos/what-the-test",
   "license": "MIT",
   "author": "GregRos",
   "type": "module",
