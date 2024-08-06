@@ -7,6 +7,7 @@ module.exports = {
             "src/test/tsconfig.json",
             "src/loader/tsconfig.esm.json",
             "src/loader/tsconfig.cjs.json",
-        ]
+        ],
+        sourceType: "module",
     }
 };
